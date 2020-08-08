@@ -36,14 +36,22 @@
 
 // Route::post('/welcome', 'AuthController@welcome_post');
 
-Route::get('/master', function (){
-    return view('adminlte.master');
-});
+// Route::get('/master', function (){
+//     return view('adminlte.master');
+// });
 
-Route::get('/', function(){
-    return view('items.index');
-});
+// Route::get('/', function(){
+//     return view('items.index');
+// });
 
-Route::get('/data-tables', function (){
-    return view('items.data-tables');
-});
+// Route::get('/data-tables', function (){
+//     return view('items.data-tables');
+// });
+
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
+Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');
